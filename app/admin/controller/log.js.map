@@ -1,0 +1,19 @@
+{
+    "version": 3,
+    "sources": [
+        "../../../src/admin/controller/log.js"
+    ],
+    "names": [
+        "Base",
+        "require",
+        "module",
+        "exports",
+        "operate_logAction",
+        "display"
+    ],
+    "mappings": "AAAA,MAAMA,OAAOC,QAAQ,WAAR,CAAb;;AAEAC,OAAOC,OAAP,GAAiB,cAAcH,IAAd,CAAmB;AAClCI,sBAAoB;AAClB,WAAO,KAAKC,OAAL,EAAP;AACD;AAHiC,CAApC",
+    "file": "../../../src/admin/controller/log.js",
+    "sourcesContent": [
+        "const Base = require('./base.js');\n\nmodule.exports = class extends Base {\n  operate_logAction() {\n    return this.display();\n  }\n};\n"
+    ]
+}

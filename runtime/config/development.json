@@ -21,7 +21,7 @@
       "type": "file",
       "file": {
         "timeout": 86400000,
-        "cachePath": "/Users/a11/Desktop/thinkjs/demo/runtime/cache",
+        "cachePath": "/Users/a11/Desktop/gitHub/demo/runtime/cache",
         "pathDepth": 1,
         "gcInterval": 86400000
       }
@@ -47,13 +47,13 @@
         "cookie": {
           "name": "thinkjs"
         },
-        "sessionPath": "/Users/a11/Desktop/thinkjs/demo/runtime/session"
+        "sessionPath": "/Users/a11/Desktop/gitHub/demo/runtime/session"
       }
     },
     "view": {
       "type": "nunjucks",
       "nunjucks": {
-        "viewPath": "/Users/a11/Desktop/thinkjs/demo/view",
+        "viewPath": "/Users/a11/Desktop/gitHub/demo/view",
         "sep": "_",
         "extname": ".html"
       }
@@ -65,14 +65,14 @@
         "backups": 10,
         "absolute": true,
         "maxLogSize": 51200,
-        "filename": "/Users/a11/Desktop/thinkjs/demo/logs/app.log"
+        "filename": "/Users/a11/Desktop/gitHub/demo/logs/app.log"
       },
       "dateFile": {
         "level": "ALL",
         "absolute": true,
         "pattern": "-yyyy-MM-dd",
         "alwaysIncludePattern": true,
-        "filename": "/Users/a11/Desktop/thinkjs/demo/logs/app.log"
+        "filename": "/Users/a11/Desktop/gitHub/demo/logs/app.log"
       }
     }
   },
@@ -98,7 +98,7 @@
       "type": "file",
       "file": {
         "timeout": 86400000,
-        "cachePath": "/Users/a11/Desktop/thinkjs/demo/runtime/cache",
+        "cachePath": "/Users/a11/Desktop/gitHub/demo/runtime/cache",
         "pathDepth": 1,
         "gcInterval": 86400000
       }
@@ -124,13 +124,13 @@
         "cookie": {
           "name": "thinkjs"
         },
-        "sessionPath": "/Users/a11/Desktop/thinkjs/demo/runtime/session"
+        "sessionPath": "/Users/a11/Desktop/gitHub/demo/runtime/session"
       }
     },
     "view": {
       "type": "nunjucks",
       "nunjucks": {
-        "viewPath": "/Users/a11/Desktop/thinkjs/demo/view",
+        "viewPath": "/Users/a11/Desktop/gitHub/demo/view",
         "sep": "_",
         "extname": ".html"
       }
@@ -142,14 +142,14 @@
         "backups": 10,
         "absolute": true,
         "maxLogSize": 51200,
-        "filename": "/Users/a11/Desktop/thinkjs/demo/logs/app.log"
+        "filename": "/Users/a11/Desktop/gitHub/demo/logs/app.log"
       },
       "dateFile": {
         "level": "ALL",
         "absolute": true,
         "pattern": "-yyyy-MM-dd",
         "alwaysIncludePattern": true,
-        "filename": "/Users/a11/Desktop/thinkjs/demo/logs/app.log"
+        "filename": "/Users/a11/Desktop/gitHub/demo/logs/app.log"
       }
     }
   },
@@ -175,7 +175,7 @@
       "type": "file",
       "file": {
         "timeout": 86400000,
-        "cachePath": "/Users/a11/Desktop/thinkjs/demo/runtime/cache",
+        "cachePath": "/Users/a11/Desktop/gitHub/demo/runtime/cache",
         "pathDepth": 1,
         "gcInterval": 86400000
       }
@@ -201,13 +201,13 @@
         "cookie": {
           "name": "thinkjs"
         },
-        "sessionPath": "/Users/a11/Desktop/thinkjs/demo/runtime/session"
+        "sessionPath": "/Users/a11/Desktop/gitHub/demo/runtime/session"
       }
     },
     "view": {
       "type": "nunjucks",
       "nunjucks": {
-        "viewPath": "/Users/a11/Desktop/thinkjs/demo/view",
+        "viewPath": "/Users/a11/Desktop/gitHub/demo/view",
         "sep": "_",
         "extname": ".html"
       }
@@ -219,14 +219,14 @@
         "backups": 10,
         "absolute": true,
         "maxLogSize": 51200,
-        "filename": "/Users/a11/Desktop/thinkjs/demo/logs/app.log"
+        "filename": "/Users/a11/Desktop/gitHub/demo/logs/app.log"
       },
       "dateFile": {
         "level": "ALL",
         "absolute": true,
         "pattern": "-yyyy-MM-dd",
         "alwaysIncludePattern": true,
-        "filename": "/Users/a11/Desktop/thinkjs/demo/logs/app.log"
+        "filename": "/Users/a11/Desktop/gitHub/demo/logs/app.log"
       }
     }
   }

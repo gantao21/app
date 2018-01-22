@@ -1,0 +1,45 @@
+{
+    "version": 3,
+    "sources": [
+        "../../../src/admin/model/ucenter_member.js"
+    ],
+    "names": [
+        "module",
+        "exports",
+        "think",
+        "Model",
+        "autoLogin",
+        "user",
+        "ip",
+        "data",
+        "Date",
+        "valueOf",
+        "_ip2int",
+        "use",
+        "where",
+        "id",
+        "update",
+        "increment",
+        "login",
+        "username",
+        "password",
+        "type",
+        "console",
+        "log",
+        "map",
+        "email",
+        "mobile",
+        "_logic",
+        "find",
+        "isEmpty",
+        "status",
+        "is_admin",
+        "userInfo",
+        "last_login_time"
+    ],
+    "mappings": ";;AAAAA,OAAOC,OAAP,GAAiB,cAAcC,MAAMC,KAApB,CAA0B;AACvC;;;;AAIIC,WAAN,CAAgBC,IAAhB,EAAsBC,EAAtB,EAA0B;AAAA;;AAAA;AACxB;AACA,YAAMC,OAAO;AACX,2BAAmB,IAAIC,IAAJ,GAAWC,OAAX,EADR;AAEX,yBAAiBC,QAAQJ,EAAR;AAFN,OAAb;AAIA,YAAMK,MAAM,MAAM,MAAKC,KAAL,CAAW,EAACC,IAAIR,KAAKQ,EAAV,EAAX,EAA0BC,MAA1B,CAAiCP,IAAjC,CAAlB;AACA,YAAM,MAAKK,KAAL,CAAW,EAACC,IAAIR,KAAKQ,EAAV,EAAX,EAA0BE,SAA1B,CAAoC,OAApC,CAAN;AAPwB;AAQzB;AACA;;;;;;;;AAQKC,OAAN,CAAYC,QAAZ,EAAsBC,QAAtB,EAAgCZ,EAAhC,EAAoCa,OAAO,CAA3C,EAA8CH,QAAQ,CAAtD,EAAyD;AAAA;;AAAA;AACxDI,cAAQC,GAAR,CAAY,2BAAZ;AACA,UAAIC,MAAM,EAAV;AACC,cAAQH,IAAR;AACE,aAAK,CAAL;AACEG,cAAIL,QAAJ,GAAeA,QAAf;AACA;AACF,aAAK,CAAL;AACEK,cAAIC,KAAJ,GAAYN,QAAZ;AACA;AACF,aAAK,CAAL;AACEK,cAAIE,MAAJ,GAAaP,QAAb;AACA;AACF,aAAK,CAAL;AACEK,cAAIT,EAAJ,GAASI,QAAT;AACA;AACF,aAAK,CAAL;AACEK,gBAAM;AACJL,sBAAUA,QADN;AAEJM,mBAAON,QAFH;AAGJO,oBAAQP,QAHJ;AAIJQ,oBAAQ;AAJJ,WAAN;AAMA;AACF;AACE,iBAAO,CAAP,CAtBJ,CAsBc;AAtBd;AAwBA,YAAMpB,OAAO,MAAM,OAAKO,KAAL,CAAWU,GAAX,EAAgBI,IAAhB,EAAnB;AACA,UAAI,CAACxB,MAAMyB,OAAN,CAActB,IAAd,CAAD,IAAwBA,KAAKuB,MAAL,IAAe,CAA3C,EAA8C;AAC5C;AACA,YAAIZ,SAAS,CAAb,EAAgB;AACd,cAAIX,KAAKwB,QAAL,IAAiB,CAArB,EAAwB;AACtB,mBAAO,CAAC,CAAR,CADsB,CACZ;AACX;AACF;AACD;AACA,YAAIX,aAAab,KAAKa,QAAtB,EAAgC;AAC9B,gBAAM,OAAKd,SAAL,CAAeC,IAAf,EAAqBC,EAArB,CAAN,CAD8B,CACC;AAC/B;AACA,gBAAMwB,WAAW;AACf,mBAAOzB,KAAKQ,EADG;AAEf,wBAAYR,KAAKY,QAFF;AAGf,+BAAmBZ,KAAK0B;AAHT,WAAjB;AAKAX,kBAAQC,GAAR,CAAY,UAAZ;;AAEAD,kBAAQC,GAAR,CAAYS,QAAZ;AACA,iBAAOA,QAAP,CAX8B,CAWb;AAClB,SAZD,MAYO;AACL,iBAAO,CAAC,CAAR,CADK,CACM;AACZ;AACF,OAvBD,MAuBO;AACL,eAAO,CAAC,CAAR,CADK,CACM;AACZ;AArDsD;AAsDxD;;AA5EwC,CAA3C",
+    "file": "../../../src/admin/model/ucenter_member.js",
+    "sourcesContent": [
+        "module.exports = class extends think.Model {\n    /**\n     * 自动登录用户\n     * @param  integer $user 用户信息数组\n     */\n  async autoLogin(user, ip) {\n    /* 更新登录信息 */\n    const data = {\n      'last_login_time': new Date().valueOf(),\n      'last_login_ip': _ip2int(ip)\n    };\n    const use = await this.where({id: user.id}).update(data);\n    await this.where({id: user.id}).increment('login');\n  }\n\t  /**\n     * 用户登录认证\n     * @param  string  $username 用户名\n     * @param  string  $password 用户密码\n     * @param  integer $type     用户名类型 （1-用户名，2-邮箱，3-手机，4-UID）\n     * @param  {int} login 登陆方式 0-前台登陆 ， 1-后台登陆\n     * @return integer           登录成功-用户ID，登录失败-错误编号\n     */\n  async login(username, password, ip, type = 1, login = 0) {\n  \tconsole.log('tableName--ucenter_member');\n  \tlet map = {};\n    switch (type) {\n      case 1:\n        map.username = username;\n        break;\n      case 2:\n        map.email = username;\n        break;\n      case 3:\n        map.mobile = username;\n        break;\n      case 4:\n        map.id = username;\n        break;\n      case 5:\n        map = {\n          username: username,\n          email: username,\n          mobile: username,\n          _logic: 'OR'\n        };\n        break;\n      default:\n        return 0; // 参数错误\n    }\n    const user = await this.where(map).find();\n    if (!think.isEmpty(user) && user.status == 1) {\n      // 验证是否是管理用户\n      if (login == 1) {\n        if (user.is_admin == 0) {\n          return -3;// 不是管理用户，不能登陆后台\n        }\n      }\n      /* 验证用户密码 */\n      if (password === user.password) {\n        await this.autoLogin(user, ip);// 更新用户登录信息，自动登陆\n        /* 记录登录SESSION和COOKIES */\n        const userInfo = {\n          'uid': user.id,\n          'username': user.username,\n          'last_login_time': user.last_login_time\n        };\n        console.log('userInfo');\n\n        console.log(userInfo);\n        return userInfo; // 登录成功，返回用户信息\n      } else {\n        return -2; // 密码错误\n      }\n    } else {\n      return -1; // 用户不存在或被禁用\n    }\n  }\n\n};\n"
+    ]
+}

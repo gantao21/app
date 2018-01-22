@@ -1,0 +1,14 @@
+{
+    "version": 3,
+    "sources": [
+        "../../../src/common/bootstrap/worker.js"
+    ],
+    "names": [
+        "require"
+    ],
+    "mappings": "AAAA;AACAA,QAAQ,UAAR",
+    "file": "../../../src/common/bootstrap/worker.js",
+    "sourcesContent": [
+        "// invoked in worker\nrequire('./global');\n"
+    ]
+}

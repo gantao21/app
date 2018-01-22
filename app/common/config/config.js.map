@@ -1,0 +1,18 @@
+{
+    "version": 3,
+    "sources": [
+        "../../../src/common/config/config.js"
+    ],
+    "names": [
+        "module",
+        "exports",
+        "workers",
+        "port",
+        "http_"
+    ],
+    "mappings": "AAAA;AACAA,OAAOC,OAAP,GAAiB;AACfC,WAAS,CADM;AAEfC,QAAM,IAFS;AAGfC,SAAO,CAHQ,CAGL;;AAHK,CAAjB",
+    "file": "../../../src/common/config/config.js",
+    "sourcesContent": [
+        "// default config\nmodule.exports = {\n  workers: 1,\n  port: 1234,\n  http_: 2, // 1:http,2:https\n\n};\n"
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "version": 3,
+    "sources": [
+        "../../../src/admin/controller/public.js"
+    ],
+    "names": [
+        "module",
+        "exports",
+        "think",
+        "Controller",
+        "__before",
+        "assign",
+        "loginAction",
+        "method",
+        "username",
+        "post",
+        "password",
+        "member",
+        "model",
+        "encryptPassword",
+        "res",
+        "login",
+        "ip",
+        "uid",
+        "session",
+        "success",
+        "name",
+        "url",
+        "fail",
+        "is_login",
+        "islogin",
+        "redirect",
+        "display",
+        "logoutAction",
+        "user",
+        "isEmpty"
+    ],
+    "mappings": ";;AAAAA,OAAOC,OAAP,GAAiB,cAAcC,MAAMC,UAApB,CAA+B;AAC9CC,aAAW;AACT,SAAKC,MAAL,CAAY,UAAZ,EAAwB,8BAAxB;AACD;AACKC,aAAN,GAAoB;AAAA;;AAAA;AAClB,YAAMC,SAAS,MAAKA,MAApB,CADkB,CACU;AAC5B,UAAGA,WAAW,MAAd,EAAsB;AACpB,YAAIC,WAAY,MAAKC,IAAL,CAAU,UAAV,CAAhB;AACA,YAAIC,WAAY,MAAKD,IAAL,CAAU,UAAV,CAAhB;AACA,YAAIE,SAAS,MAAKC,KAAL,CAAW,gBAAX,CAAb;AACAF,mBAAYG,gBAAgBH,QAAhB,CAAZ;AACA,cAAMI,MAAM,MAAMH,OAAOI,KAAP,CAAaP,QAAb,EAAuBE,QAAvB,EAAiC,MAAKM,EAAtC,EAA0C,CAA1C,EAA6C,CAA7C,CAAlB;AACA,YAAGF,IAAIG,GAAJ,GAAQ,CAAX,EAAa;AACX,gBAAM,MAAKC,OAAL,CAAa,UAAb,EAAyBJ,GAAzB,CAAN;;AAEA,iBAAO,MAAKK,OAAL,CAAa,EAACC,MAAM,OAAP,EAAgBC,KAAK,cAArB,EAAb,CAAP;AACD,SAJD,MAIK;AACH,cAAIC,IAAJ;AACA,kBAAQR,GAAR;AACE,iBAAK,CAAC,CAAN;AACEQ,qBAAO,WAAP;AACA,oBAHJ,CAGW;AACT,iBAAK,CAAC,CAAN;AACEA,qBAAO,MAAP;AACA;AACF,iBAAK,CAAC,CAAN;AACEA,qBAAO,UAAP;AACA;AACF;AACEA,qBAAO,MAAP,CAXJ,CAWmB;AAXnB;AAaA,iBAAO,MAAKA,IAAL,CAAUA,IAAV,CAAP;AACD;AAEF,OA5BD,MA4BK;AACH,cAAMC,WAAW,MAAM,MAAKC,OAAL,EAAvB;AACE,YAAID,QAAJ,EAAc;AACd,iBAAO,MAAKE,QAAL,CAAc,cAAd,CAAP;AACD,SAFC,MAEK;AACL,iBAAO,MAAKC,OAAL,EAAP;AACD;AACF;AACD,aAAO,MAAKA,OAAL,EAAP;AAtCkB;AAuCnB;AACKC,cAAN,GAAoB;AAAA;;AAAA;AAChB,YAAM,OAAKT,OAAL,CAAa,IAAb,CAAN;AACA,aAAO,OAAKO,QAAL,CAAc,OAAd,EAAsB,OAAtB,CAAP;AAFgB;AAInB;AACKD,SAAN,GAAgB;AAAA;;AAAA;AACd,YAAMI,OAAO,MAAM,OAAKV,OAAL,CAAa,UAAb,CAAnB;AACA,YAAMJ,MAAM,CAACZ,MAAM2B,OAAN,CAAcD,IAAd,CAAb;AACA,aAAOd,GAAP;AAHc;AAIf;AArD6C,CAAhD",
+    "file": "../../../src/admin/controller/public.js",
+    "sourcesContent": [
+        "module.exports = class extends think.Controller {\n  __before() {\n    this.assign('_PUBLIC_', 'http://127.0.0.1:1234/public');\n  };\n  async loginAction() {\n    const method = this.method; // 获取当前请求类型\n    if(method === 'POST') {\n      let username =  this.post('username');\n      let password =  this.post('password');\n      let member = this.model('ucenter_member');\n      password =  encryptPassword(password);\n      const res = await member.login(username, password, this.ip, 1, 1);\n      if(res.uid>0){\n        await this.session('userInfo', res);\n      \n        return this.success({name: '登陆成功!', url: '/admin/index'});\n      }else{\n        let fail;\n        switch (res) {\n          case -1:\n            fail = '用户不存在或被禁用';\n            break; // 系统级别禁用\n          case -2:\n            fail = '密码错误';\n            break;\n          case -3:\n            fail = '您无权登陆后台！';\n            break;\n          default:\n            fail = '未知错误'; // 0-接口参数错误（调试阶段使用）\n        }\n        return this.fail(fail);\n      }\n\n    }else{\n      const is_login = await this.islogin();\n        if (is_login) {\n        return this.redirect('/admin/index');\n      } else {\n        return this.display();\n      }\n    }\n    return this.display();\n  }\n  async logoutAction(){\n      await this.session(null);\n      return this.redirect('login','admin');\n\n  }\n  async islogin() {\n    const user = await this.session('userInfo');\n    const res = !think.isEmpty(user);\n    return res;\n  }\n};\n"
+    ]
+}

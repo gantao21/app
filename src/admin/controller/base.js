@@ -1,5 +1,8 @@
 module.exports = class extends think.Controller {
   async __before() {
+    console.log('request.host'+this.ctx.request.host);
+    this.assign('_PUBLIC_',  'http://'+this.ctx.request.host+'/public');
+
     this.user =await this.session('userInfo');
   	 if(!this.user){
   	 	  	return this.redirect('public/login','admin');
@@ -9,16 +12,27 @@ module.exports = class extends think.Controller {
      */
     const url = this.ctx.controller+'/'+this.ctx.action;
     console.log(url);
-
+    
     this.is_admin = this.isadmin(this.user);
-     // if (!this.is_admin) {
+     if (!this.is_admin) {
+
+    let requestPublic = await this.config('request_public');
+    console.log(requestPublic);
+    if(!requestPublic.includes( 'admin/'+url)){
+      console.log('不存在');
       const auth = this.service('rbac', 'admin',this.user.uid);
       const res = await auth.check(url);
-      console.log(res);
       if (!res) {
-        return this.fail('没有权限');
+        if ( this.isAjax('post')) {
+          return this.fail('没有权限');
+        }else{
+          return this.errorAction('没有权限');
+       }
       }
-    // }
+    }else{
+      console.log('存在哟');
+    }
+  }
     this.sidebar = await this.session('sidebar');
 
     if(!this.sidebar){
@@ -41,7 +55,7 @@ module.exports = class extends think.Controller {
      */
   async isadmin(uid) {
     uid = uid || null;
-    return uid && (in_array(parseInt(uid), this.config('user_administrator')));
+    return uid &&  this.config('user_administrator');
   }
   async getRuleIds(){
      let  data= await think.model('auth_user_role').alias('a').join({
@@ -65,21 +79,6 @@ module.exports = class extends think.Controller {
       const ruleModel = think.model('auth_rule');
       let rules = await ruleModel.field('id,pid,path,name,desc,icon,type,sort').where({id: ['IN', ids], status: 1,is_show:1}).order('pid,sort ASC').select();
       let group = [];
-      // if (rules) {
-      //     // for (var i = 0; i < rules.length; i++) {
-      //       // let item = rules[i];
-      //       rules.forEach(item => {
-      //       if(item.pid == 0){
-      //             group[item.id] = item;
-      //             group[item.id]['child'] = [];
-      //       }else{
-      //             group[item.pid]['child'].push(item);
-
-      //       }
-      //     });
-      //     // }
-
-      // }
       if (rules) {
             rules.forEach(item => {
             var path=(item.path).split("-");
@@ -106,5 +105,37 @@ module.exports = class extends think.Controller {
             console.log(item['child']);
         });
       return group;
+  }
+  async successAction(message = '成功信息！', status = 0) {
+    if (this.isJsonp()) {
+      return this.jsonp({
+        [this.config('errnoField')]: status,
+        [this.config('errmsgField ')]: message
+      });
+    } else if (this.isAjax()) {
+      return this.fail(status, message);
+    }
+    this.assign({
+      status: status,
+      message: message
+    });
+
+    return this.display('admin/success');
+  }
+  async errorAction(message = '错误信息！', status = 1000) {
+    if (this.isJsonp()) {
+      return this.jsonp({
+        [this.config('errnoField')]: status,
+        [this.config('errmsgField ')]: message
+      });
+    } else if (this.isAjax()) {
+      return this.fail(status, message);
+    }
+    this.assign({
+      status: status,
+      message: message
+    });
+
+    return this.display('admin/error');
   }
 };

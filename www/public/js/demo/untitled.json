@@ -1,13 +1,6 @@
-const Base = require('./base.js');
-
-module.exports = class extends Base {
-  indexAction() {
-    return this.display();
-  }
-  getUserListAction(){
-  	var json ={
-			"total":20,
-			"rows":[
+{
+"total":20,
+"rows":[
     {
         "id": 0,
         "name": "测试0",
@@ -196,8 +189,6 @@ module.exports = class extends Base {
         "column2": "c20",
         "column3": "c30",
         "column4": "c40"
-    }]
-		}
-  	return this.json(json);
-  }
-};
+    }
+]
+}

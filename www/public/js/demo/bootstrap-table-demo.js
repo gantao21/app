@@ -82,67 +82,67 @@ function buildTable($el, cells, rows) {
 
   // Example Bootstrap Table From Data
   // ---------------------------------
-  (function() {
-    var bt_data = [{
-      "Tid": "1",
-      "First": "奔波儿灞",
-      "sex": "男",
-      "Score": "50"
-    }, {
-      "Tid": "2",
-      "First": "灞波儿奔",
-      "sex": "男",
-      "Score": "94"
-    }, {
-      "Tid": "3",
-      "First": "作家崔成浩",
-      "sex": "男",
-      "Score": "80"
-    }, {
-      "Tid": "4",
-      "First": "韩寒",
-      "sex": "男",
-      "Score": "67"
-    }, {
-      "Tid": "5",
-      "First": "郭敬明",
-      "sex": "男",
-      "Score": "100"
-    }, {
-      "Tid": "6",
-      "First": "马云",
-      "sex": "男",
-      "Score": "77"
-    }, {
-      "Tid": "7",
-      "First": "范爷",
-      "sex": "女",
-      "Score": "87"
-    }];
+  // (function() {
+  //   var bt_data = [{
+  //     "Tid": "1",
+  //     "First": "奔波儿灞",
+  //     "sex": "男",
+  //     "Score": "50"
+  //   }, {
+  //     "Tid": "2",
+  //     "First": "灞波儿奔",
+  //     "sex": "男",
+  //     "Score": "94"
+  //   }, {
+  //     "Tid": "3",
+  //     "First": "作家崔成浩",
+  //     "sex": "男",
+  //     "Score": "80"
+  //   }, {
+  //     "Tid": "4",
+  //     "First": "韩寒",
+  //     "sex": "男",
+  //     "Score": "67"
+  //   }, {
+  //     "Tid": "5",
+  //     "First": "郭敬明",
+  //     "sex": "男",
+  //     "Score": "100"
+  //   }, {
+  //     "Tid": "6",
+  //     "First": "马云",
+  //     "sex": "男",
+  //     "Score": "77"
+  //   }, {
+  //     "Tid": "7",
+  //     "First": "范爷",
+  //     "sex": "女",
+  //     "Score": "87"
+  //   }];
 
 
-    $('#exampleTableFromData').bootstrapTable({
-      data: bt_data,
-      // mobileResponsive: true,
-      height: "250"
-    });
-  })();
+  //   $('#exampleTableFromData').bootstrapTable({
+  //     data: bt_data,
+  //     // mobileResponsive: true,
+  //     height: "250"
+  //   });
+  // })();
 
   // Example Bootstrap Table Columns
   // -------------------------------
-  (function() {
-    $('#exampleTableColumns').bootstrapTable({
-      url: "js/demo/bootstrap_table_test.json",
-      height: "400",
-      iconSize: 'outline',
-      showColumns: true,
-      icons: {
-        refresh: 'glyphicon-repeat',
-        toggle: 'glyphicon-list-alt',
-        columns: 'glyphicon-list'
-      }
-    });
-  })();
+  // (function() {
+  //   $('#exampleTableColumns').bootstrapTable({
+  //     url: "http://127.0.0.1:1234/public/js/demo/bootstrap_table_test.json",
+  //     height: "400",
+  //     iconSize: 'outline',
+  //     showColumns: true,
+  //     icons: {
+  //       refresh: 'glyphicon-repeat',
+  //       toggle: 'glyphicon-list-alt',
+  //       columns: 'glyphicon-list'
+  //     }
+  //   });
+  // })();
 
 
   // Example Bootstrap Table Large Columns
@@ -152,41 +152,44 @@ function buildTable($el, cells, rows) {
 
   // Example Bootstrap Table Toolbar
   // -------------------------------
-  (function() {
-    $('#exampleTableToolbar').bootstrapTable({
-      url: "js/demo/bootstrap_table_test2.json",
-      search: true,
-      showRefresh: true,
-      showToggle: true,
-      showColumns: true,
-      toolbar: '#exampleToolbar',
-      iconSize: 'outline',
-      icons: {
-        refresh: 'glyphicon-repeat',
-        toggle: 'glyphicon-list-alt',
-        columns: 'glyphicon-list'
-      }
-    });
-  })();
+  // (function() {
+  //   $('#exampleTableToolbar').bootstrapTable({
+  //     url: "http://127.0.0.1:1234/public/js/demo/bootstrap_table_test2.json",
+  //     search: true,
+  //     showRefresh: true,
+  //     showToggle: true,
+  //     showColumns: true,
+  //     toolbar: '#exampleToolbar',
+  //     iconSize: 'outline',
+  //     icons: {
+  //       refresh: 'glyphicon-repeat',
+  //       toggle: 'glyphicon-list-alt',
+  //       columns: 'glyphicon-list'
+  //     }
+  //   });
+  // })();
 
 
   // Example Bootstrap Table Events
   // ------------------------------
   (function() {
     $('#exampleTableEvents').bootstrapTable({
-      url: "js/demo/bootstrap_table_test.json",
+      url: "getUserList",
       search: true,
+      sidePagination: "server",
       pagination: true,
+      sortable: true, 
       showRefresh: true,
       showToggle: true,
       showColumns: true,
       iconSize: 'outline',
       toolbar: '#exampleTableEventsToolbar',
-      icons: {
-        refresh: 'glyphicon-repeat',
-        toggle: 'glyphicon-list-alt',
-        columns: 'glyphicon-list'
-      }
+      // icons: {
+      //   refresh: 'glyphicon-repeat',
+      //   toggle: 'glyphicon-list-alt',
+      //   columns: 'glyphicon-list'
+      // }
+
     });
 
     var $result = $('#examplebtTableEventsResult');
@@ -195,40 +198,41 @@ function buildTable($el, cells, rows) {
         console.log('Event:', name, ', data:', args);
       })
       .on('click-row.bs.table', function(e, row, $element) {
-        $result.text('Event: click-row.bs.table');
+        $result.text('点击行事件'+JSON.stringify(row));
       })
       .on('dbl-click-row.bs.table', function(e, row, $element) {
-        $result.text('Event: dbl-click-row.bs.table');
+        $result.text('双击行事件'+JSON.stringify(row));
       })
       .on('sort.bs.table', function(e, name, order) {
-        $result.text('Event: sort.bs.table');
+        $result.text('排序事件 当前' + name + '列，以' + order + '排列');
       })
       .on('check.bs.table', function(e, row) {
-        $result.text('Event: check.bs.table');
+        $result.text('checkbox选中事件'+JSON.stringify(row));
       })
       .on('uncheck.bs.table', function(e, row) {
-        $result.text('Event: uncheck.bs.table');
+        $result.text('checkbox取消选中事件'+JSON.stringify(row));
       })
       .on('check-all.bs.table', function(e) {
-        $result.text('Event: check-all.bs.table');
+        $result.text('全选');
       })
       .on('uncheck-all.bs.table', function(e) {
-        $result.text('Event: uncheck-all.bs.table');
+        $result.text('取消全选');
       })
       .on('load-success.bs.table', function(e, data) {
-        $result.text('Event: load-success.bs.table');
+        $result.text('加载完成事件');
       })
       .on('load-error.bs.table', function(e, status) {
-        $result.text('Event: load-error.bs.table');
+        $result.text('加载错误事件');
       })
       .on('column-switch.bs.table', function(e, field, checked) {
-        $result.text('Event: column-switch.bs.table');
+        $result.text('筛选列事件 ');
       })
       .on('page-change.bs.table', function(e, size, number) {
-        $result.text('Event: page-change.bs.table');
+        $result.text('切换页事件 当前页数：第' + number + "页，每页显示数量" + size + "条");
       })
       .on('search.bs.table', function(e, text) {
-        $result.text('Event: search.bs.table');
+        $result.text('搜索事件');
       });
   })();
+  
 })(document, window, jQuery);

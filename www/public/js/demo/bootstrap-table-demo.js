@@ -79,7 +79,6 @@ function buildTable($el, cells, rows) {
 
 (function(document, window, $) {
   'use strict';
-
   // Example Bootstrap Table From Data
   // ---------------------------------
   // (function() {
@@ -174,6 +173,7 @@ function buildTable($el, cells, rows) {
   // ------------------------------
   (function() {
     $('#exampleTableEvents').bootstrapTable({
+      method: 'post', //请求方式（*）
       url: "getUserList",
       search: true,
       sidePagination: "server",
@@ -182,6 +182,8 @@ function buildTable($el, cells, rows) {
       showRefresh: true,
       showToggle: true,
       showColumns: true,
+      idField : 'id',
+
       iconSize: 'outline',
       toolbar: '#exampleTableEventsToolbar',
       // icons: {

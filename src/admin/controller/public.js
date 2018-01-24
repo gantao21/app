@@ -1,6 +1,6 @@
 module.exports = class extends think.Controller {
   __before() {
-    this.assign('_PUBLIC_', 'http://127.0.0.1:1234/public');
+    this.assign('_PUBLIC_',  'http://'+this.ctx.request.host+'/public');
   };
   async loginAction() {
     const method = this.method; // 获取当前请求类型

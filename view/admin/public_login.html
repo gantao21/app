@@ -44,8 +44,12 @@
     <script src="{{_PUBLIC_}}/js/jquery.min.js?v=2.1.4"></script>
     <script src="{{_PUBLIC_}}/js/bootstrap.min.js?v=3.3.6"></script>
     <script src="{{_PUBLIC_}}/js/plugins/layer/layer.min.js"></script>
+    <script src="http://wechatfe.github.io/vconsole/lib/vconsole.min.js?v=3.0.0.0"></script>
+
 
   <script>
+    var vConsole = new VConsole();
+  console.log('Hello world');
              $(self).addClass('disabled').attr('autocomplete','off').prop('disabled',true);
               $('#validate-submit').click(function () {
                 var self = this;

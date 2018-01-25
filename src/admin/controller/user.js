@@ -4,6 +4,9 @@ module.exports = class extends Base {
   indexAction() {
     return this.display();
   }
+  addAction(){
+  	 return this.display();	
+  }
   getUserListAction(){
   	var json ={
 			"total":20,

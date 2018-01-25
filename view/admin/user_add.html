@@ -1,0 +1,360 @@
+<div class="modal fade in" id="ajaxModal" aria-hidden="false" style="display: block;"><div class="modal-dialog modal-lg add-addr-dialog">
+    <form>
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <h4 class="modal-title">查看订单</h4>
+        </div>
+        <div class="modal-body">
+            <section class="panel panel-default m-b-xs">
+                <header class="panel-heading">
+                    <span class="label bg-danger pull-right m-t-xs">1</span>
+                    发货清单
+                </header>
+                <table class="table  m-b-none">
+                    <thead>
+                    <tr>
+                        <th>货号</th>
+                        <th>商品名</th>
+                        <th>规格</th>
+                        <th>价格</th>
+                        <th>数量</th>
+                        <th>促销</th>
+                        <th>小计</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    
+                    <tr>
+                        <td>
+                            <span class="thumb-sm"><img class="img-responsive img-thumbnail" src="https://odhs9iog7.qnssl.com/5snqgB8Gg7IuQdCmfn084GeT.jpg?imageView2/1/w/100/h/100" alt="ThinkPad S5 20B3A03VCD"></span>
+                        </td>
+                        <td>ThinkPad S5 20B3A03VCD</td>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            5,499.00
+                        </td>
+                        <td>1</td>
+                        <td></td>
+                        <td>5,499.00</td>
+                    </tr>
+                  
+                    </tbody>
+                </table>
+            </section>
+            <section class="panel panel-default m-b-xs">
+                <header class="panel-heading">
+                    <span class="label bg-danger pull-right m-t-xs"></span>
+                    购买人信息
+                </header>
+                <table class="table  m-b-none">
+                    <thead>
+                    <tr>
+                        <th>用户名</th>
+                        <th>姓名</th>
+                        <th>手机</th>
+                        <th>电话</th>
+                        <th>邮箱</th>
+                        <th>地址</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr>
+                        <td>
+                            cmswing
+                        </td>
+                        <td>12344</td>
+                        <td>
+                            13571883578
+                        </td>
+                        <td></td>
+                        <td>
+                            cmswing@cmswing.com
+                        </td>
+                        <td>111111</td>
+
+
+                    </tr>
+
+                    </tbody>
+                </table>
+            </section>
+            <section class="panel panel-default m-b-xs">
+                <header class="panel-heading">
+                    <span class="label bg-danger pull-right m-t-xs"></span>
+                    订单信息
+                </header>
+                <table class="table m-b-none">
+                    <tbody>
+
+                    <tr>
+                        <td class="active">
+                       订单编号
+                        </td>
+                        <td>200000000096540
+                        </td><td class="active">
+                       下单时间
+                        </td>
+                        <td>2017-11-24 00:01:36</td>
+                        <td class="active">
+                        支付方式
+                        </td>
+                        <td>支付宝 PC 网页支付</td>
+                    </tr>
+                    <tr>
+                        <td class="active">
+                            支付手续费
+                        </td>
+                        <td><span class="text-danger"> 免费 </span></td>
+                        <td class="active">
+                            配送方式
+                        </td>
+                        <td>物流</td>
+                        <td class="active">
+                            配送费用
+                        </td>
+                        <td><span class="text-danger">0.09</span></td>
+                    </tr>
+                    <tr>
+                        <td class="active">
+                            代金券
+                        </td>
+                        <td><span class="text-danger">-</span></td>
+                        <td class="active">
+                            商品总金额
+                        </td>
+                        <td><span class="text-danger">5,499.00</span> </td>
+                        <td class="active">
+                            发票税金
+                        </td>
+                        <td><span class="text-danger"> 无发票</span> </td>
+                    </tr>
+                    <tr>
+                        <td class="active">
+                            原订单总金额
+                        </td>
+                        <td colspan="5"><span class="text-danger olde_order_amount">5,499.09</span>
+                            <span class="help-block m-b-none text-muted"><i class="fa fa-info-circle text-info"></i> 注：记订单在未调价之前的总金额</span></td>
+                    </tr>
+                    <tr>
+                        <td class="active">
+                            订单折扣或涨价
+                        </td>
+                        <td colspan="5"><span class="text-danger olde_order_amount"> 0</span>
+                            <span class="help-block m-b-none text-muted"><i class="fa fa-info-circle text-info"></i> 要给顾客便宜100元，则输入"-100";要提高订单价格100元，则输入"100"</span>
+                            </td>
+                    </tr>
+                    <tr>
+                        <td class="active">
+                            调整后订单总金额
+                        </td>
+                        <td colspan="5"><span class="text-danger" id="order_amount">5,499.09</span>
+                            <span class="help-block m-b-none text-muted"><i class="fa fa-info-circle text-info"></i> 注：总金额不会小于0元</span></td>
+                    </tr>
+                    <tr>
+                        <td class="active">
+                            用户备注
+                        </td>
+                        <td colspan="5"></td>
+                    </tr>
+                    <tr>
+                        <td class="active">
+                            管理员备注
+                        </td>
+                        <td colspan="5">规定时间未付款系统自动作废</td>
+                    </tr>
+                    <tr>
+                        <td class="active">
+                            调价原因
+                        </td>
+                        <td colspan="5"></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </section>
+            <section class="panel panel-default m-b-none">
+                <header class="panel-heading">
+                    <span class="label bg-danger pull-right m-t-xs"></span>
+                    收货人信息
+                </header>
+                <table class="table m-b-none">
+                    <tbody>
+
+                    <tr>
+                        <td class="active">
+                            收货人姓名
+                        </td>
+                        <td>aaa</td>
+                        <td class="active">
+                            联系手机
+                        </td>
+                        <td>11111111111</td>
+
+                    </tr>
+                    <tr>
+                        <td class="active">
+                            联系电话
+                        </td>
+                        <td></td>
+                        <td class="active">
+                            邮编
+                        </td>
+                        <td>10001</td>
+                    </tr>
+                    <tr>
+                        <td class="active">
+                            收货地区
+                        </td>
+                        <td colspan="3">    <div class="form-group m-b-none" id="areas">
+                            <div class="col-md-3 col-sm-12">
+
+                                <select class="form-control pointer " id="province1" name="province" data-required="true" disabled="disabled">
+                                    <option value="">--- 省份/直辖市 ---</option>
+                                    
+                                    <option value="110000" selected="">北京市</option>
+                                    
+                                    <option value="120000">天津市</option>
+                                    
+                                    <option value="130000">河北省</option>
+                                    
+                                    <option value="140000">山西省</option>
+                                    
+                                    <option value="150000">内蒙古</option>
+                                    
+                                    <option value="210000">辽宁省</option>
+                                    
+                                    <option value="220000">吉林省</option>
+                                    
+                                    <option value="230000">黑龙江</option>
+                                    
+                                    <option value="310000">上海市</option>
+                                    
+                                    <option value="320000">江苏省</option>
+                                    
+                                    <option value="330000">浙江省</option>
+                                    
+                                    <option value="340000">安徽省</option>
+                                    
+                                    <option value="350000">福建省</option>
+                                    
+                                    <option value="360000">江西省</option>
+                                    
+                                    <option value="370000">山东省</option>
+                                    
+                                    <option value="410000">河南省</option>
+                                    
+                                    <option value="420000">湖北省</option>
+                                    
+                                    <option value="430000">湖南省</option>
+                                    
+                                    <option value="440000">广东省</option>
+                                    
+                                    <option value="450000">广西省</option>
+                                    
+                                    <option value="460000">海南省</option>
+                                    
+                                    <option value="500000">重庆市</option>
+                                    
+                                    <option value="510000">四川省</option>
+                                    
+                                    <option value="520000">贵州省</option>
+                                    
+                                    <option value="530000">云南省</option>
+                                    
+                                    <option value="540000">西　藏</option>
+                                    
+                                    <option value="610000">陕西省</option>
+                                    
+                                    <option value="620000">甘肃省</option>
+                                    
+                                    <option value="630000">青海省</option>
+                                    
+                                    <option value="640000">宁　夏</option>
+                                    
+                                    <option value="650000">新　疆</option>
+                                    
+                                    <option value="710000">台湾省</option>
+                                    
+                                    <option value="810000">香　港</option>
+                                    
+                                    <option value="820000">澳　门</option>
+                                    
+                                </select>
+                            </div>
+                            <div class="col-md-3 col-sm-12">
+
+                                <select class="form-control pointer " id="city1" name="city" data-required="true" disabled="disabled">
+                                    
+                                    <option value="110100" selected="">北京市</option>
+                                    
+                                    <option value="110200">县</option>
+                                    
+                                </select>
+                            </div>
+                            <div class="col-md-3 col-sm-12">
+
+                                <select class="form-control pointer " id="county1" name="county" data-required="true" disabled="disabled">
+                                    
+                                    <option value="110101" selected="">东城区</option>
+                                    
+                                    <option value="110102">西城区</option>
+                                    
+                                    <option value="110103">崇文区</option>
+                                    
+                                    <option value="110104">宣武区</option>
+                                    
+                                    <option value="110105">朝阳区</option>
+                                    
+                                    <option value="110106">丰台区</option>
+                                    
+                                    <option value="110107">石景山区</option>
+                                    
+                                    <option value="110108">海淀区</option>
+                                    
+                                    <option value="110109">门头沟区</option>
+                                    
+                                    <option value="110111">房山区</option>
+                                    
+                                    <option value="110112">通州区</option>
+                                    
+                                    <option value="110113">顺义区</option>
+                                    
+                                    <option value="110114">昌平区</option>
+                                    
+                                    <option value="110115">大兴区</option>
+                                    
+                                    <option value="110116">怀柔区</option>
+                                    
+                                    <option value="110117">平谷区</option>
+                                    
+                                </select>
+                            </div>
+                        </div></td>
+                    </tr>
+                    <tr>
+                        <td class="active">
+                            收货地址
+                        </td>
+                        <td colspan="3"> vcxzvcxzvcxzvczx</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </section>
+        </div>
+        <div class="modal-footer">
+            <input type="hidden" value="3" name="id">
+            <a href="javascript:;" class="btn btn-default" data-dismiss="modal">关闭</a>
+
+        </div>
+    </div><!-- /.modal-content -->
+    </form>
+</div><!-- /.modal-dialog -->
+</div>

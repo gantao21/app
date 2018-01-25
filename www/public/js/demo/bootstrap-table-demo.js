@@ -168,7 +168,6 @@ function buildTable($el, cells, rows) {
   //   });
   // })();
 
-
   // Example Bootstrap Table Events
   // ------------------------------
   (function() {

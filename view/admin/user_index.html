@@ -5,19 +5,14 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
     <title>H+ 后台主题UI框架 - Bootstrap Table</title>
     <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
     <meta name="description" content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
-
     <link rel="shortcut icon" href="{{_PUBLIC_}}/favicon.ico"> <link href="{{_PUBLIC_}}/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
     <link href="{{_PUBLIC_}}/css/font-awesome.css?v=4.4.0" rel="stylesheet">
     <link href="{{_PUBLIC_}}/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
     <link href="{{_PUBLIC_}}/css/animate.css" rel="stylesheet">
     <link href="{{_PUBLIC_}}/css/style.css?v=4.1.0" rel="stylesheet">
-    
-
 </head>
 
 <body class="gray-bg">
@@ -53,7 +48,7 @@
                                 </div>
                                 <div class="btn-group hidden-xs" id="exampleTableEventsToolbar" role="group">
                                     
-                                    <button class="btn btn-primary click-add" type="submit"><i class="glyphicon glyphicon-plus">添加</i>
+                                    <button class="btn btn-primary"  href="/admin/user/add"  data-toggle="ajaxModal" type="button"><i class="glyphicon glyphicon-plus"> 添加</i>
                                     </button>
                                     <button class="btn btn-info " type="button"><i class="fa fa-paste"></i> 编辑</button>
                                     <button class="btn btn-danger resource_delete"> <i class="glyphicon glyphicon-trash" aria-hidden="true"></i> 删除</button>
@@ -82,13 +77,13 @@
     <script src="{{_PUBLIC_}}/js/plugins/layer/layer.min.js"></script>
     <!-- 自定义js -->
     <script src="{{_PUBLIC_}}/js/content.js?v=1.0.0"></script>
-    <script src="{{_PUBLIC_}}/js/common.js"></script>
     <!-- Bootstrap table -->
     <script src="{{_PUBLIC_}}/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
     <script src="{{_PUBLIC_}}/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
     <script src="{{_PUBLIC_}}/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
     <!-- Peity -->
     <script src="{{_PUBLIC_}}/js/demo/bootstrap-table-demo.js"></script>
+    <script src="{{_PUBLIC_}}/js/common.js"></script>
     <script type="text/javascript">
         //询问框
     //     layer.msg('-----', {icon: 1});      

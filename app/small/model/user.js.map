@@ -1,0 +1,22 @@
+{
+    "version": 3,
+    "sources": [
+        "../../../src/small/model/user.js"
+    ],
+    "names": [
+        "module",
+        "exports",
+        "think",
+        "Model",
+        "userInfoByUserName",
+        "username",
+        "data",
+        "where",
+        "find"
+    ],
+    "mappings": ";;AAAAA,OAAOC,OAAP,GAAiB,cAAcC,MAAMC,KAApB,CAA0B;AACnCC,mBAAN,CAAyBC,QAAzB,EAAmC;AAAA;;AAAA;AAChC,OAAIC,OAAO,MAAM,MAAKC,KAAL,CAAW,EAACF,UAAUA,QAAX,EAAX,EAAiCG,IAAjC,EAAjB;AACA,UAAOF,IAAP;AAFgC;AAGjC;AAJuC,CAA3C",
+    "file": "../../../src/small/model/user.js",
+    "sourcesContent": [
+        "module.exports = class extends think.Model {\n\t async userInfoByUserName(username) {\n\t \t  let data = await this.where({username: username}).find();\n\t    return data;\n  \t}\n};\n"
+    ]
+}

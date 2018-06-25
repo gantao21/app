@@ -1,0 +1,19 @@
+{
+    "version": 3,
+    "sources": [
+        "../../../src/small/model/shoppingmodel.js"
+    ],
+    "names": [
+        "module",
+        "exports",
+        "think",
+        "Model",
+        "getShoppingData",
+        "data"
+    ],
+    "mappings": ";;AAAAA,OAAOC,OAAP,GAAiB,cAAcC,MAAMC,KAApB,CAA0B;AACnCC,gBAAN,GAAwB;AAAA;AACvB,OAAIC,OAAO;AACX,wBAAmB,CAClB,EAAC,SAAQ,MAAT,EAAgB,eAAc,GAA9B,EAAkC,QAAO,CAAC;AACzC,gBAAS,8BADgC;AAEzC,kBAAW,MAF8B;AAGzC,kBAAW;AAH8B,MAAD,EAKzC;AACC,gBAAS,8BADV;AAEC,kBAAW,IAFZ;AAGC,kBAAW;AAHZ,MALyC,EAUzC;AACC,gBAAS,gCADV;AAEC,kBAAW,KAFZ;AAGC,kBAAW;AAHZ,MAVyC,EAezC;AACC,gBAAS,+BADV;AAEC,kBAAW,IAFZ;AAGC,kBAAW;AAHZ,MAfyC,CAAzC,EADkB,EAqBlB,EAAC,SAAQ,MAAT,EAAgB,eAAc,GAA9B,EAAkC,QAAO,CAAC;AACzC,gBAAS,8BADgC;AAEzC,kBAAW,IAF8B;AAGzC,kBAAW;AAH8B,MAAD,EAKzC;AACC,gBAAS,gCADV;AAEC,kBAAW,IAFZ;AAGC,kBAAW;AAHZ,MALyC,EAUzC;AACC,gBAAS,6BADV;AAEC,kBAAW,IAFZ;AAGC,kBAAW;AAHZ,MAVyC,EAezC;AACC,gBAAS,iCADV;AAEC,kBAAW,IAFZ;AAGC,kBAAW;AAHZ,MAfyC,EAoBzC;AACC,gBAAS,6BADV;AAEC,kBAAW,IAFZ;AAGC,kBAAW;AAHZ,MApByC,CAAzC,EArBkB,CADR;AAgDX,gBAAW,CAAC;AACV,eAAS,mFADC;AAEV,iBAAW,SAFD;AAGV,iBAAW;AAHD,KAAD,EAKV;AACC,eAAS,mFADV;AAEC,iBAAW,SAFZ;AAGC,iBAAW;AAHZ,KALU,EAUV;AACC,eAAS,mFADV;AAEC,iBAAW,MAFZ;AAGC,iBAAW;AAHZ,KAVU,EAeV;AACC,eAAS,mFADV;AAEC,iBAAW,MAFZ;AAGC,iBAAW;AAHZ,KAfU;AAhDA,IAAX;AAqEE,UAAOA,IAAP;AAtEqB;AAuEtB;AAxEuC,CAA3C",
+    "file": "../../../src/small/model/shoppingmodel.js",
+    "sourcesContent": [
+        "module.exports = class extends think.Model {\n\t async getShoppingData() {\n\t \tlet data = {\n\t\t\t\"shoppingCategory\":[\n\t\t\t\t{\"title\":\"特色市场\",\"hasActivity\":\"1\",\"list\":[{\n\t\t\t\t\t\"imgUrl\":\"images/markets/list/xihu.jpg\",\n\t\t\t\t\t\"shopName\":\"心水好货\",\n\t\t\t\t\t\"shopDesc\":\"新款春装上阵\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"imgUrl\":\"images/markets/list/dama.jpg\",\n\t\t\t\t\t\"shopName\":\"运动\",\n\t\t\t\t\t\"shopDesc\":\"轻松购出好身材\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"imgUrl\":\"images/markets/list/likeme.jpg\",\n\t\t\t\t\t\"shopName\":\"设计师\",\n\t\t\t\t\t\"shopDesc\":\"设计师新款来袭\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"imgUrl\":\"images/markets/list/trade.png\",\n\t\t\t\t\t\"shopName\":\"充值\",\n\t\t\t\t\t\"shopDesc\":\"话费全国通用\"\n\t\t\t\t}]},\n\t\t\t\t{\"title\":\"全部商品\",\"hasActivity\":\"0\",\"list\":[{\n\t\t\t\t\t\"imgUrl\":\"images/goods/list/jacket.png\",\n\t\t\t\t\t\"shopName\":\"上衣\",\n\t\t\t\t\t\"shopDesc\":\"低价新品壁咚\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"imgUrl\":\"images/goods/list/trousers.jpg\",\n\t\t\t\t\t\"shopName\":\"裤子\",\n\t\t\t\t\t\"shopDesc\":\"春季最热卖\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"imgUrl\":\"images/goods/list/skirt.jpg\",\n\t\t\t\t\t\"shopName\":\"裙子\",\n\t\t\t\t\t\"shopDesc\":\"焕新你的衣橱\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"imgUrl\":\"images/goods/list/underwear.jpg\",\n\t\t\t\t\t\"shopName\":\"内衣\",\n\t\t\t\t\t\"shopDesc\":\"焕新由内而外\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"imgUrl\":\"images/goods/list/shoes.png\",\n\t\t\t\t\t\"shopName\":\"女鞋\",\n\t\t\t\t\t\"shopDesc\":\"好鞋不将旧\"\n\t\t\t\t}]}\n\t\t\t],\n\t\t\t\"shoplist\":[{\n\t\t\t\t\t\"imgUrl\":\"http://s18.mogucdn.com/p1/160506/upload_ifqtszldmmzdczjvhazdambqgyyde_315x315.png\",\n\t\t\t\t\t\"shopName\":\"长不大的少女心\",\n\t\t\t\t\t\"shopDesc\":\"我不想 我不想 不想长大\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"imgUrl\":\"http://s17.mogucdn.com/p1/160506/upload_ifrggndfmezdczjvhazdambqmeyde_315x315.png\",\n\t\t\t\t\t\"shopName\":\"长不大的少女心\",\n\t\t\t\t\t\"shopDesc\":\"我不想 我不想 不想长大\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"imgUrl\":\"http://s18.mogucdn.com/p1/160307/upload_ie4wgmdfmfqtaojsg4zdambqgqyde_315x315.jpg\",\n\t\t\t\t\t\"shopName\":\"创意生活\",\n\t\t\t\t\t\"shopDesc\":\"生活里，总需要小创意\"\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"imgUrl\":\"http://s17.mogucdn.com/p1/160325/upload_ie4gen3eguzdmnbyg4zdambqgiyde_315x315.png\",\n\t\t\t\t\t\"shopName\":\"创意生活\",\n\t\t\t\t\t\"shopDesc\":\"生活里，总需要小创意\"\n\t\t\t\t}]\n\t\t};\n\t    return data;\n  \t}\n};\n"
+    ]
+}

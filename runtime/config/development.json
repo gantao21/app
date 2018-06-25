@@ -17,7 +17,7 @@
       "type": "file",
       "file": {
         "timeout": 86400000,
-        "cachePath": "/Users/a11/Desktop/minapp/app/runtime/cache",
+        "cachePath": "/Users/penghuaiyu/Documents/GitHub/app/runtime/cache",
         "pathDepth": 1,
         "gcInterval": 86400000
       }
@@ -43,13 +43,13 @@
         "cookie": {
           "name": "thinkjs"
         },
-        "sessionPath": "/Users/a11/Desktop/minapp/app/runtime/session"
+        "sessionPath": "/Users/penghuaiyu/Documents/GitHub/app/runtime/session"
       }
     },
     "view": {
       "type": "nunjucks",
       "nunjucks": {
-        "viewPath": "/Users/a11/Desktop/minapp/app/view",
+        "viewPath": "/Users/penghuaiyu/Documents/GitHub/app/view",
         "sep": "_",
         "extname": ".html"
       }
@@ -61,14 +61,14 @@
         "backups": 10,
         "absolute": true,
         "maxLogSize": 51200,
-        "filename": "/Users/a11/Desktop/minapp/app/logs/app.log"
+        "filename": "/Users/penghuaiyu/Documents/GitHub/app/logs/app.log"
       },
       "dateFile": {
         "level": "ALL",
         "absolute": true,
         "pattern": "-yyyy-MM-dd",
         "alwaysIncludePattern": true,
-        "filename": "/Users/a11/Desktop/minapp/app/logs/app.log"
+        "filename": "/Users/penghuaiyu/Documents/GitHub/app/logs/app.log"
       }
     }
   },
@@ -90,7 +90,7 @@
       "type": "file",
       "file": {
         "timeout": 86400000,
-        "cachePath": "/Users/a11/Desktop/minapp/app/runtime/cache",
+        "cachePath": "/Users/penghuaiyu/Documents/GitHub/app/runtime/cache",
         "pathDepth": 1,
         "gcInterval": 86400000
       }
@@ -116,13 +116,13 @@
         "cookie": {
           "name": "thinkjs"
         },
-        "sessionPath": "/Users/a11/Desktop/minapp/app/runtime/session"
+        "sessionPath": "/Users/penghuaiyu/Documents/GitHub/app/runtime/session"
       }
     },
     "view": {
       "type": "nunjucks",
       "nunjucks": {
-        "viewPath": "/Users/a11/Desktop/minapp/app/view",
+        "viewPath": "/Users/penghuaiyu/Documents/GitHub/app/view",
         "sep": "_",
         "extname": ".html"
       }
@@ -134,14 +134,14 @@
         "backups": 10,
         "absolute": true,
         "maxLogSize": 51200,
-        "filename": "/Users/a11/Desktop/minapp/app/logs/app.log"
+        "filename": "/Users/penghuaiyu/Documents/GitHub/app/logs/app.log"
       },
       "dateFile": {
         "level": "ALL",
         "absolute": true,
         "pattern": "-yyyy-MM-dd",
         "alwaysIncludePattern": true,
-        "filename": "/Users/a11/Desktop/minapp/app/logs/app.log"
+        "filename": "/Users/penghuaiyu/Documents/GitHub/app/logs/app.log"
       }
     }
   }

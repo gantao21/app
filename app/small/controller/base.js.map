@@ -8,11 +8,12 @@
         "exports",
         "think",
         "Controller",
-        "__before"
+        "__before",
+        "header"
     ],
-    "mappings": "AAAAA,OAAOC,OAAP,GAAiB,cAAcC,MAAMC,UAApB,CAA+B;AAC9CC,aAAW,CAEV;AAH6C,CAAhD",
+    "mappings": "AAAAA,OAAOC,OAAP,GAAiB,cAAcC,MAAMC,UAApB,CAA+B;AAC9CC,aAAW;AACV,SAAKC,MAAL,CAAY,6BAAZ,EAA0C,GAA1C;AACA;AAH6C,CAAhD",
     "file": "../../../src/small/controller/base.js",
     "sourcesContent": [
-        "module.exports = class extends think.Controller {\n  __before() {\n\n  }\n};\n"
+        "module.exports = class extends think.Controller {\n  __before() {\n  \tthis.header(\"Access-Control-Allow-Origin\",\"*\");\n  }\n};\n"
     ]
 }

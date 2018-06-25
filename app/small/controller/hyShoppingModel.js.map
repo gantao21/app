@@ -1,0 +1,23 @@
+{
+    "version": 3,
+    "sources": [
+        "../../../src/small/controller/hyShoppingModel.js"
+    ],
+    "names": [
+        "Base",
+        "require",
+        "module",
+        "exports",
+        "hyShoppingInfoAction",
+        "userModel",
+        "model",
+        "data",
+        "userInfoByUserName",
+        "success"
+    ],
+    "mappings": ";;AAAA,MAAMA,OAAOC,QAAQ,WAAR,CAAb;;AAEAC,OAAOC,OAAP,GAAiB,cAAcH,IAAd,CAAmB;AAC5BI,sBAAN,GAA6B;AAAA;;AAAA;AAC1B,UAAIC,YAAY,MAAKC,KAAL,CAAW,iBAAX,CAAhB;AACC,YAAMC,OAAO,MAAMF,UAAUG,kBAAV,CAA6B,IAA7B,CAAnB;AACD,aAAO,MAAKC,OAAL,CAAaF,IAAb,CAAP;AAH0B;AAI5B;AALiC,CAApC",
+    "file": "../../../src/small/controller/hyShoppingModel.js",
+    "sourcesContent": [
+        "const Base = require('./base.js');\n\nmodule.exports = class extends Base {\n  async hyShoppingInfoAction() {\n  \t  let userModel = this.model('hyshoppingmodel');\n      const data = await userModel.userInfoByUserName(\"黄总\");\n  \t  return this.success(data);\n  }\n};\n"
+    ]
+}

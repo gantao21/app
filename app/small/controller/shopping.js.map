@@ -1,0 +1,23 @@
+{
+    "version": 3,
+    "sources": [
+        "../../../src/small/controller/shopping.js"
+    ],
+    "names": [
+        "Base",
+        "require",
+        "module",
+        "exports",
+        "hyShoppingInfoAction",
+        "shoppingModel",
+        "model",
+        "data",
+        "getShoppingData",
+        "success"
+    ],
+    "mappings": ";;AAAA,MAAMA,OAAOC,QAAQ,WAAR,CAAb;;AAEAC,OAAOC,OAAP,GAAiB,cAAcH,IAAd,CAAmB;AAC5BI,sBAAN,GAA6B;AAAA;;AAAA;AAC1B,UAAIC,gBAAgB,MAAKC,KAAL,CAAW,eAAX,CAApB,CAD0B,CACsB;AAC/C,YAAMC,OAAO,MAAMF,cAAcG,eAAd,EAAnB;AACD,aAAO,MAAKC,OAAL,CAAaF,IAAb,CAAP;AAH0B;AAI5B;AALiC,CAApC",
+    "file": "../../../src/small/controller/shopping.js",
+    "sourcesContent": [
+        "const Base = require('./base.js');\n\nmodule.exports = class extends Base {\n  async hyShoppingInfoAction() {\n  \t  let shoppingModel = this.model('shoppingmodel');//加载模型，从db.js数据库中读取表\n      const data = await shoppingModel.getShoppingData();\n  \t  return this.success(data);\n  }\n};\n"
+    ]
+}
